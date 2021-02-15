@@ -31,6 +31,7 @@ namespace ScifiTupi.API
             (Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
             services.AddScoped<IContentRepository, ContentRepository>();
+            services.AddAutoMapper(typeof(ContentRepository).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
