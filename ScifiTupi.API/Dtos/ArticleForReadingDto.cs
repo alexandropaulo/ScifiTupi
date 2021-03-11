@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ScifiTupi.API.Dtos
@@ -11,9 +12,9 @@ namespace ScifiTupi.API.Dtos
         public string FullText { get; set; }
         public int State { get; set; }
         public int Catid { get; set; }
-        public string CreatedDt { get; set; }
-        public string CreatedBy { get; set; }
-        public string CreatedByAlias { get; set; }
+        public DateTime CreatedDt { get; set; }
+        public int CreatedBy { get; set; }
+        public string Category { get; set; }
         public string ImageIcon { get; set; }
         public string Metadata { get; set; }
         public string Metakey { get; set; }

@@ -39,8 +39,10 @@ namespace ScifiTupi.API.Data
             if (page == 0) {page = 1;}
             int pageSize = 5; 
             //var cont =  await _context.Articles.Where(x => x.State == 1).CountAsync();
-            var articles = await _context.Articles.Where(x => x.State == 1).
-                           OrderByDescending(x => x.CreatedDt).Skip((page - 1) * pageSize)
+            var articles = await _context.Articles.Where(x => x.State == 1)
+                           .Include(articles => articles.Category)
+                           .Include(articles => articles.User)
+                           .OrderByDescending(x => x.CreatedDt).Skip((page - 1) * pageSize)
                            .Take(pageSize).AsNoTracking().ToListAsync();
             return articles;
         }

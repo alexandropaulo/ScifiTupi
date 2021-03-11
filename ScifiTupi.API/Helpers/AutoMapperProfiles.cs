@@ -8,8 +8,12 @@ namespace ScifiTupi.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Article, ArticleForContentDto>();
-            CreateMap<Article, ArticleForReadingDto>();
+            CreateMap<Article, ArticleForContentDto>()
+               .ForMember(dest => dest.Category, opt => 
+                    opt.MapFrom(src => src.Category.Title));
+            CreateMap<Article, ArticleForReadingDto>()
+               .ForMember(dest => dest.Category, opt => 
+                    opt.MapFrom(src => src.Category.Title));
             CreateMap<Comment, CommentForReadingDto>();
             CreateMap<Comment, CommentForListDto>();
         }

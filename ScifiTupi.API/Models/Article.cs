@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ScifiTupi.API.Models
@@ -11,15 +12,15 @@ namespace ScifiTupi.API.Models
         public string FullText { get; set; }
         public int State { get; set; }
         public int Catid { get; set; }
-        public string CreatedDt { get; set; }
-        public string CreatedBy { get; set; }
+        public DateTime CreatedDt { get; set; }
+        public int CreatedBy { get; set; }
         public string CreatedByAlias { get; set; }
-        public string ModifiedDt { get; set; }
+        public DateTime? ModifiedDt { get; set; }
         public int ModifiedBy { get; set; }
         public int CheckedOut { get; set; }
-        public string CheckedOutTime { get; set; }
-        public string PublishUpDt { get; set; }
-        public string PublishDownDt { get; set; }
+        public DateTime? CheckedOutTime { get; set; }
+        public DateTime? PublishUpDt { get; set; }
+        public DateTime? PublishDownDt { get; set; }
         public string ImageIcon { get; set; }
         public string Urls { get; set; }
         public int Version { get; set; }
@@ -30,5 +31,7 @@ namespace ScifiTupi.API.Models
         public int Access { get; set; }
         public int Hits { get; set; }
         public ICollection<Comment> Comments { get; set; }
+        public Category Category { get; set; }
+        public User User { get; set; }
     }
 }

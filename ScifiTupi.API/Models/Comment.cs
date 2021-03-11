@@ -1,3 +1,5 @@
+using System;
+
 namespace ScifiTupi.API.Models
 {
     public class Comment
@@ -11,15 +13,15 @@ namespace ScifiTupi.API.Models
           public string Url { get; set; }
           public string Ip { get; set; }
           public int CreatedBy { get; set; }
-          public string CreatedDt { get; set; }
+          public DateTime CreatedDt { get; set; }
           public int ModifiedBy { get; set; }
-          public string ModifiedDt { get; set; }
+          public DateTime? ModifiedDt { get; set; }
           public string DeletedBy { get; set; }
-          public string DeletedDt { get; set; }
+          public DateTime? DeletedDt { get; set; }
           public int Flag { get; set; }
           public int Published { get; set; }
-          public string PublishUp { get; set; }
-          public string PublishDown { get; set; }
+          public DateTime? PublishUp { get; set; }
+          public DateTime? PublishDown { get; set; }
           public int ParentId { get; set; }
     }
 }
