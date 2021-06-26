@@ -1,0 +1,21 @@
+<div class="container">
+<div class="blog-post">
+  <div *ngFor="let article of articles" class="blog-post">
+
+      <h2 class="blog-post-title">{{ article.title }}</h2>
+      <p class="blog-post-meta" >Created 
+        {{ article.createdDt | date:'MMM d, y, H:mm:ss '}}  by
+        <a href="#">{{ article.createdByAlias }}</a> 
+      </p>
+
+      <div class="row mb-3">
+      <div [innerHTML]="article.introText" class="container"></div>
+
+    </div>
+    <p class="blog-post-meta text-right" > Hits: {{article.hits}}  Comments(0)
+    </p>
+
+    <hr />
+  </div>
+</div>
+</div>

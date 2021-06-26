@@ -30,6 +30,7 @@ namespace ScifiTupi.API
             services.AddDbContext<DataContext>(x => x.UseSqlite
             (Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
+            services.AddCors();
             services.AddScoped<IContentRepository, ContentRepository>();
             services.AddAutoMapper(typeof(ContentRepository).Assembly);
         }
@@ -45,6 +46,7 @@ namespace ScifiTupi.API
             //app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthorization();
 
